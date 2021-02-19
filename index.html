@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TUTORIAL</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .banner{
+        background: url('imgg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+    }
+    .logo{
+        position: absolute;
+        margin: 25px;
+        width: 110px;
+        margin-left: 50px;
+        margin-top: 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        border: 3px solid burlywood;
+    }
+    .banner-text{
+        color: honeydew;
+        text-align: center;
+        padding-top: 215px;
+    }
+    .banner-text h2{
+        font-size: 1.6rem;
+        color: black;
+        height: 3px;
+        font-family: Roboto,HelveticaNeue,Arial,sans-serif;;
+    }
+    .banner-text h1{
+        background-color: black;
+        width: 19%;
+        margin-left: 547px;
+        font-family: Roboto,HelveticaNeue,Arial,sans-serif;
+        word-spacing: 0.5px;
+    }
+    .banner-btn{
+        margin: 50px auto 0;
+    }
+    .banner-btn a{
+        width: 150px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: burlywood;
+        border: 2px solid white;
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        font-size: 1.04rem;
+    }
+    .banner-btn a span{
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        z-index: -1;
+        transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        width: 100%;
+    }
+    .banner-btn a:hover{
+        color: #000;
+    }
+    #sideNav{
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        right: -250px;
+        top: 0;
+        background:rgb(240, 192, 130);
+        z-index: 2;
+        transition: 0.5s;
+        text-decoration: none;
+    }
+    nav ul li{
+        list-style: none;
+        margin-top: 50px;
+        position: relative;
+    }
+    #menuBtn{
+        width: 5px;
+        height: 50px;
+        text-align: center;
+        position: fixed;
+        right: 80px;
+        top: 20px;
+        border-radius: 3px;
+        z-index: 3;
+        cursor: pointer;
+    }
+    #menuBtn img{
+        width: 50px;
+        margin-top: 0px;
+    }
+    @media screen and (max-width:770px) {
+        .banner-text h1{
+        background-color: black;
+        width: 80%;
+        margin-left: 45px;
+        font-family: Roboto,HelveticaNeue,Arial,sans-serif;
+        word-spacing: 0.5px;  
+        }
+        .banner-btn a{
+            display: inline-block;
+            margin: 5px;
+        }
+        .logo{
+            width: 83px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        #menuBtn{
+            right: 80px;
+        }
+        
+    }
+    #feature{
+        width: 100%;
+        padding: 70px 0;
+    }
+    .title-text{
+        text-align: center;
+        padding-bottom: 70px;
+    }
+    .title-text h4{
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color:brown;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+    }
+    .title-text h4::after{
+        content: '';
+        width: 105px;
+        height: 35px;
+        background: linear-gradient(#f0c082,#fff);
+        position: absolute;
+        top: -20;
+        left: 0;
+        z-index: -1;
+        border-bottom-right-radius: 70px;
+        border-top-left-radius: 70px;
+        transform: rotate(10deg);
+    }
+    .title-text h1{
+        font-size: 53px;
+        word-spacing: 3px;
+    }
+    .feature-img{
+        flex-basis: 10%;
+        margin:10px 30px;
+        margin-top: -5%;
+    }
+    .feature-img img{
+        width: 38%;
+        border-radius: 30px;
+        border: 2px solid brown;
+        flex-basis: 19%;
+        margin-top: -40%;
+        
+    }
+    #p{
+        flex-wrap: wrap;
+        display: block;
+        text-align: right;
+        justify-content: right;
+        margin-right: 2.3rem; 
+        left: 10px;
+        font-size: 22px;
+        margin-top: 8%;
+        color: brown;
+        font-weight:600;
+    }
+    @media screen and (max-width:770px) {
+        .title-text #p{
+            text-align: center;
+            justify-content: center;
+            flex-basis: 100%;
+            padding: 12px;
+            margin: 3px;
+            font-size: 1.13rem;
+        
+        }
+        .feature-img{
+            flex-basis: 100%;
+        }
+        .feature-img img{
+            width: 100%;
+            margin: -5px;
+        }
+    }
+    #service{
+        width: 100%;
+        padding: 40px 0;
+        background: rgb(207, 163, 136);
+    }
+    .service-box{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+    }
+    .single-service{
+        flex-basis: 48%;
+        text-align: center;
+        border-radius: 7px;
+        margin-bottom: 20px;
+        color: white;
+        margin-top: 8px;
+        position: relative;
+    }
+    .single-service img{
+        width: 70%;
+        border-radius: 7px;
+    }
+    .overlay{
+        width: 70%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        border-radius: 7px;
+        cursor: pointer;
+        opacity: 0;
+        transition: 1s;
+        background: linear-gradient(#f0c082,#fff);
+        padding-right: 142px;
+    }
+    .single-service:hover .overlay{
+        opacity: 1;
+    }
+    .service-desc{
+        width: 70%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: 1s;
+    }
+    hr{
+        background: black;
+        height: 2px;
+        border: 0;
+        margin: 12px auto;
+        width: 60%;
+    }
+    .service-desc p{
+        font-size: 15px;
+        color: black;
+        font-weight:600;
+    }
+    .single-service:hover .service-desc{
+        bottom: 10%;
+        opacity: 1;
+    }
+    @media screen and (max-width:770px){
+        .single-service{
+            flex-basis: 100%;
+            margin-bottom: 30px;
+        }
+        .service-desc p{
+            font-size: 10px;
+            margin-bottom: -15px;
+        }
+        hr{
+            margin: 3px auto;     
+       }
+       .single-service:hover .service-desc{
+           bottom: 8% !important;
+       }
+    }
+    #footer{
+        padding: 85px 0 20px;
+        background: #efefef;
+    }
+    .footer-row{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-right{
+        flex-basis: 45%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .footer-row h1{
+        margin: 20px 0;
+        text-decoration: underline;
+        font-size: 1.3rem;
+    }
+    .footer-row p{
+        line-height: 25px;
+        margin: 13px 17px;
+        padding-left: 20px;
+        font-size: 1.15rem;
+        cursor: pointer;
+    }
+    .feature-icon .fa{
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        line-height: 30px;
+        border-radius: 5px;
+        color: brown;
+        display: inline;
+        position:absolute;
+        cursor: pointer;
+    }
+    .social-links{
+        text-align: center;
+    }
+    .social-links .fa{
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+        line-height: 40px;
+        border: 1px solid black;
+        margin: 40px 5px 40px;
+        color: brown;
+        cursor: pointer;
+        transition: .5s;
+    }
+    .social-links .fa:hover{
+        background: burlywood;
+        transform: translateY(-7px);
+    }
+    @media screen and (max-width:770px){
+        .title-text h1{
+            flex-basis: 100%;
+        }
+    }
+    .social-links p{
+        font-size: 16px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+
+    }
+</style>
+<body>
+    <div class="banner">
+        <img class="logo" src="images (1).jpg" alt="">
+        <div class="banner-text">
+            <h2>THINK TWICE</h2>
+            <h1>CODE ONCE..!</h1>
+            <div class="banner-btn">
+                <a href="#"><span></span>Find Out</a>
+                <a href="#"><span></span>Read More</a>
+            </div>
+        </div>
+    </div>
+    <div id="sideNav">
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">CONTENT</a></li>
+                <li><a href="#">FEATURES</a></li>
+                <li><a href="#">DETAILS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="menuBtn">
+        <img src="threelines.png" id="menu">
+    </div>
+    <div id="feature">
+        <div class="title-text">
+            <h4>CONTENT</h4>
+            <h1>What is it</h1>
+            <p id="p">Coding is used for communicating with computers.<br>Each line of the code is a set of instructions for the computer.<br> A set of codes form a script, and a set or dozens of sets,<br> form a program.Coding finds excessive use in popular gadgets<br> such as applications on the phone,<br> tablets, computers, and other smart gadgets,<br> like smartwatches and smart TV.
+                Coding is used in automated cars,<br> to control every aspect, from clutches to air conditioning, to fuel injectors.<br>
+                System analogs are being employed to streamline procedures at a broader level,<br> such as controlling sewages, electrical grids, traffic lights, etc.<br>
+                Coding finds use in every phase of the current world.</p>
+        </div>
+        <div class="feature-img">
+            <img src="code.jpg">
+
+        </div>
+    </div>
+    <div id="service">
+        <div class="title-text">
+        <h4>FEATURES</h4>
+        <h1>What you can do</h1>
+        </div>
+    </div>
+    <div class="service-box">
+        <div class="single-service">
+                <img src="2.jpg">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>WEB DEVELOPMENT</h3>
+                    <hr>
+                    <p>Web development is the building and maintenance of websites;<br> it's the work that happens behind the scenes to <br>make a website look great, work fast and perform well<br> with a seamless user experience. Web developers, or 'devs',<br> do this by using a variety of coding languages.</p>
+                </div>
+        </div>
+            <div class="single-service">
+                <img src="2.jpg">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>APP DEVELOPMENT</h3>
+                    <hr>
+                    <p>App development is the act or process by which a<br> mobile app is developed for mobile devices, such<br> as personal digital assistants, enterprise digital <br>assistants or mobile phones.</p>
+                </div>
+            </div>
+            <div class="single-service">
+                <img src="2.jpg">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>GAME DEVELOPMENT</h3>
+                    <hr>
+                    <p> Game development is the process of developing a video<br> game. The effort is undertaken by a developer, ranging <br>from a single person to an international team dispersed across the globe.</p>
+                </div>
+            </div>
+            <div class="single-service">
+                <img src="2.jpg">
+                <div class="overlay"></div>
+                <div class="service-desc">
+                    <h3>DATA SCIENCE</h3>
+                    <hr>
+                    <p>Data science is an inter-disciplinary field that uses <br>scientific methods, processes, algorithms and systems to extractknowledge and insights<br> from many structural and unstructured data.<br> Data science is related to data mining, machine learning and big data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <section id="footer">
+            <div class="title-text">
+                <h4>DETAILS</h4>
+                <h1>Get in touch</h1>
+            </div>
+            <div class="footer-row">
+                <div class="footer-right">
+                    <h1>Get In Touch</h1>
+                    <div class="feature-icon">
+                        <i class="fa fa-envelope-o"></i>
+                    <p> example@email.com</p>
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fa fa-phone"></i>
+                        <p> +01 123456789</p>
+                </div>
+            </div>
+        </section>
+        <div class="social-links">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-youtube-play"></i>
+            <p>Copyright CODE</p>
+        </div>
+    </section>
+</body>
+<script>
+    var menuBtn = document.getElementById("menuBtn")
+    var sideNav = document.getElementById("sideNav")
+    var menu = document.getElementById("menu")
+
+    sideNav.style.right = "-250px";
+    menuBtn.onclick = function(){
+        if(sideNav.style.right == "-250px"){
+            sideNav.style.right = "0";
+        }
+        else{
+            sideNav.style.right = "-250px";
+        }
+    }
+</script>
+</html>
